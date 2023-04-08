@@ -20,7 +20,9 @@ const calc = (someString) => {
   }
 
   const ans = numbers.reduce((sum, curVal) => {
-    return sum + parseInt(curVal);
+    if (curVal < 0) throw new Error("negatives not allowed")
+    else if (curVal > 1000) return sum 
+    else return  sum + parseInt(curVal);
   }, 0);
 
   return ans;
